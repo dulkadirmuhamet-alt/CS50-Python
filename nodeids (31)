@@ -1,0 +1,6 @@
+[
+  "test_seasons.py::test_calculate_minutes",
+  "test_seasons.py::test_format_words",
+  "test_seasons.py::test_parse_date_invalid",
+  "test_seasons.py::test_parse_date_valid"
+]

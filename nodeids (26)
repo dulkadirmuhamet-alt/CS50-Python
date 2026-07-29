@@ -1,0 +1,37 @@
+from datetime import date
+from seasons import parse_date, calculate_minutes, format_words
+import pytest
+
+
+def test_parse_date_valid():
+    assert parse_date("1999-01-01") == date(1999, 1, 1)
+    assert parse_date("2000-02-29") == date(2000, 2, 29)
+
+
+def test_parse_date_invalid():
+    with pytest.raises(SystemExit):
+        parse_date("January 1, 1999")
+    with pytest.raises(SystemExit):
+        parse_date("1999-13-01")
+    with pytest.raises(SystemExit):
+        parse_date("1999-02-30")
+    with pytest.raises(SystemExit):
+        parse_date("cat")
+
+def test_calculate_minutes():
+    assert calculate_minutes(date(1999, 1, 1), date(2000, 1, 1)) == 525600
+    assert calculate_minutes(date(2000, 1, 1), date(2001, 1, 1)) == 527040
+    assert calculate_minutes(date(2020, 5, 15), date(2020, 5, 15)) == 0
+
+
+def test_format_words():
+    assert (
+        format_words(525600)
+        == "Five hundred twenty-five thousand, six hundred minutes"
+    )
+    assert format_words(1440) == "One thousand, four hundred forty minutes"
+    assert (
+        format_words(15778080)
+        == "Fifteen million, seven hundred seventy-eight thousand eighty minutes"
+    )
+

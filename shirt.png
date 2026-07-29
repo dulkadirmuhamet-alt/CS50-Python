@@ -1,0 +1,12 @@
+from numb3rs import validate
+
+
+def test_valid_ip():
+    assert validate("127.0.0.1") == True
+    assert validate("255.255.255.255") == True
+    assert validate("0.0.0.0") == True
+def test_out_of_range():
+    assert validate("256.255.255.255") == False
+    assert validate("1.512.1.1") == False
+    assert validate("1.1.1.512") == False
+

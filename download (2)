@@ -1,0 +1,5 @@
+# take input from user
+text = input()
+
+# make input lovercase and print
+print(text.lower())

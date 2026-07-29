@@ -1,0 +1,14 @@
+emojies = {":thumbsup:": "👍",
+":earthafrica:": "🌍",
+":earthamericas:": "🌎",
+":earthasia:":"🌏",
+":1stplacemedal:":"🥇",
+":moneybag:": "💰",
+":smilecat:": "😸",}
+
+text = input("Input:").replace("_","")
+
+
+
+
+print(f"Output:{emojies[text]}")

@@ -1,0 +1,9 @@
+# Get mass from the user and converet it to an integer
+mass = int(input("m: "))
+
+# Calculate energy (E = m* c^2) where c = 300000000
+energy = mass*300000000**2
+
+# Output the result
+print("E:",energy)
+
